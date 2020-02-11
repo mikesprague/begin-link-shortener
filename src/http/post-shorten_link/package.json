@@ -1,7 +1,0 @@
-{
-  "name": "begin-app-post-shorten_link",
-  "dependencies": {
-    "@architect/functions": "latest",
-    "@begin/data": "latest"
-  }
-}
