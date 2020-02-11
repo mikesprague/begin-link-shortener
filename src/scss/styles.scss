@@ -26,7 +26,7 @@
       --red-graphics: #ef4035; /* highlights important areas but is used sparingly: visual style elements, such as line breaks or color blocks without text; small fill areas */
       --red-text: #df1e12; /* highlights important areas but is used sparingly: visual style elements, such as line breaks or color blocks without text; small fill areas */
       --navy: #073949; /* neutral bg areas */
-      --dark-warm-grey: #073949; /* neutral bg areas */
+      --dark-warm-grey: #a2998b; /* neutral bg areas */
       --sea-grey: #9fad9f; /* neutral bg areas */
     /* additional colors */
       --med-grey: #bbb;
@@ -42,7 +42,7 @@
 }
 
 body {
-  background-color: var(--carnellian);
+  background-color: var(--navy);
   color: var(--white);
 }
 
@@ -81,7 +81,7 @@ body {
   }
 
   a.result-link:hover {
-    color: var(--red-graphics);
+    color: var(--sea-grey);
     text-decoration: underline;
   }
 
@@ -92,10 +92,10 @@ body {
 }
 
 .clipboard-link {
-  color: var(--red-graphics);
+  color: var(--sea-grey);
   cursor: pointer;
 }
 
 .btn:hover {
-  color: var(--red-graphics);
+  color: var(--sea-grey);
 }

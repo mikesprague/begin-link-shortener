@@ -85,11 +85,6 @@ const config = {
     new MiniCssExtractPlugin({
       filename: 'css/styles.css',
     }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: './src/index.html',
-      compress: true,
-    }),
     new CopyWebpackPlugin([{
       from: './src/robots.txt',
       to: './',
