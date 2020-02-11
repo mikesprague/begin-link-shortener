@@ -3,13 +3,11 @@
   "version": "0.0.0",
   "description": "Basic Node.js link shortener built to run on Begin (begin.com)",
   "scripts": {
-    "assets": "webpack --color --display-max-modules 0",
-    "assets:watch": "npm run assets -d -w --color true --display minimal",
-    "build": "npm run assets -p",
+    "build": "webpack -p --color --display-max-modules 0",
     "build:dev": "cross-env NODE_ENV=testing npm run assets -d",
     "prepare": "yarn snyk-protect",
     "snyk-protect": "snyk protect",
-    "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'npm run assets:watch' --names '🖥 ,📦 ' --prefix '[{name}] '",
+    "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'npm run assets -d -w --color true --display minimal' --names '🖥 ,📦 ' --prefix '[{name}] '",
     "test": "snyk test"
   },
   "dependencies": {
