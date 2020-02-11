@@ -1,12 +1,11 @@
-# Warning: do not edit
-# --------------------
-# This is a generated file and will be overwritten
-
 @app
-begin-app
+tacos-y4f
+
+@static
 
 @http
 get /
+post /shorten_link
 
 @tables
 data
