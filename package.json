@@ -7,7 +7,7 @@
     "build:dev": "cross-env NODE_ENV=testing npm run assets -d",
     "prepare": "yarn snyk-protect",
     "snyk-protect": "snyk protect",
-    "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'npm run assets -d -w --color true --display minimal' --names '🖥 ,📦 ' --prefix '[{name}] '",
+    "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'cross-env NODE_ENV=testing webpack -d --color --display-max-modules 0' --names '🖥 ,📦 ' --prefix '[{name}] '",
     "test": "snyk test"
   },
   "dependencies": {
