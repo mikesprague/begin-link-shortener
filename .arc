@@ -6,6 +6,7 @@ tacos-y4f
 @http
 get /
 post /shorten
+get /l/:id
 
 @tables
 data
