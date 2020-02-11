@@ -5,6 +5,7 @@ tacos-y4f
 
 @http
 get /
+post /shortenlink
 
 @tables
 data
