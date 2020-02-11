@@ -7,12 +7,23 @@
     "assets:watch": "npm run assets -d -w --color true --display minimal",
     "build": "npm run assets -p",
     "build:dev": "cross-env NODE_ENV=testing npm run assets -d",
-    "prepublish": "yarn snyk-protect",
+    "prepare": "yarn snyk-protect",
     "snyk-protect": "snyk protect",
     "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'npm run assets:watch' --names '🖥 ,📦 ' --prefix '[{name}] '",
     "test": "snyk test"
   },
   "dependencies": {
+    "@bugsnag/js": "^6.5.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/pro-duotone-svg-icons": "^5.12.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "clipboard-polyfill": "^2.8.6",
+    "dayjs": "^1.8.20",
+    "dompurify": "^2.0.8",
+    "dotenv": "^8.2.0",
+    "logrocket": "^1.0.6",
+    "nanoid": "^2.1.11",
     "snyk": "^1.291.0"
   },
   "devDependencies": {
