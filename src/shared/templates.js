@@ -29,9 +29,6 @@ exports.getIndexHtml = () => {
   <meta name="theme-color" content="">
   <meta name="apple-mobile-web-app-title" content="${pageTitle}">
   <meta name="application-name" content="${pageTitle}">
-  <!-- <link rel="canonical" href="https://bigred.link"/> -->
-  <!-- <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com"> -->
   <link rel="preconnect" href="https://sessions.bugsnag.com">
   <link rel="preload" as="script" type="text/javascript" href="${staticAsset('js/main.js')}">
   <link rel="preload" as="style" type="text/css" href="${staticAsset('css/styles.css')}">
@@ -60,14 +57,6 @@ exports.getIndexHtml = () => {
     </footer>
   </div>
   <script src="${staticAsset('js/main.js')}"></script>
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-34"></script> -->
-  <!-- <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-461185-34');
-  </script> -->
 </body>
 </html>
 `;

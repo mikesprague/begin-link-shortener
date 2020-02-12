@@ -1,12 +1,19 @@
 // const begin = require('@architect/functions');
 const templates = require('@architect/shared/templates.js');
-console.log('templates: ', templates);
 
 const html = templates.getIndexHtml();
-console.log(html);
 
 exports.handler = async function http(req) {
-  console.log(req)
+  const { pathParameters } = req;
+  if (pathParameters) {
+    const { proxy: shortId } = pathParameters;
+    console.log('pathParameters: ', pathParameters);
+    console.log('shortId: ', shortId);
+    if (shortId && shortId.length === 7) {
+      console.log(`it's a short link!`);
+    }
+  }
+
   return {
     headers: {
       'content-type': 'text/html; charset=utf8',

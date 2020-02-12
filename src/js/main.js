@@ -5,16 +5,8 @@ import * as DOMPurify from 'dompurify';
 import LogRocket from 'logrocket';
 import * as helpers from './modules/helpers';
 
-const isProduction = helpers.isProduction();
-
-if (isProduction) {
-  LogRocket.init('skxlwh/bigredlink');
-  window.bugsnagClient = bugsnag('efd0bccb34ee27c231eb01c233af7be6');
-  bugsnag.beforeNotify = (data) => {
-    // eslint-disable-next-line no-param-reassign
-    data.metaData.sessionURL = LogRocket.sessionURL;
-    return data;
-  };
+if (!helpers.isDev()) {
+  window.bugsnagClient = bugsnag('202988736270fa680453c640bf975559');
 }
 
 const form = document.querySelector('.url-form');
