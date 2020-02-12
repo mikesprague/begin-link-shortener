@@ -2,7 +2,6 @@ import '../scss/styles.scss';
 import axios from 'axios';
 import bugsnag from '@bugsnag/js';
 import * as DOMPurify from 'dompurify';
-import LogRocket from 'logrocket';
 import * as helpers from './modules/helpers';
 
 if (!helpers.isDev()) {
