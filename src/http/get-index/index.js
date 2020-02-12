@@ -1,5 +1,5 @@
-const data = require('@begin/data');
 const begin = require('@architect/functions');
+const data = require('@begin/data');
 const templates = require('@architect/shared/templates');
 
 const html = templates.getIndexHtml();
@@ -8,19 +8,17 @@ exports.handler = async function http(req) {
   const { pathParameters } = req;
   if (pathParameters) {
     const { proxy: shortId } = pathParameters;
-    console.log('shortId: ', shortId);
     if (shortId && shortId.length === 8) {
-      console.log("it's a short link!");
       const shortLink = await data.get({
         table: 'links',
         key: shortId,
       });
-      console.log('shortLink: ', shortLink);
       if (shortLink) {
-        return {
-          statusCode: 302,
-          headers: { location: shortLink.original_url },
-        };
+        console.log('shortLink: ', shortLink);
+        // return {
+        //   statusCode: 302,
+        //   headers: { location: shortLink.original_url },
+        // };
       }
       return {
         statusCode: 404,

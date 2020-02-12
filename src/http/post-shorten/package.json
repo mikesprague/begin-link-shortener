@@ -2,6 +2,8 @@
   "name": "begin-app-post-shorten",
   "dependencies": {
     "@architect/functions": "latest",
-    "@begin/data": "latest"
+    "@begin/data": "latest",
+    "dayjs": "^1.8.20",
+    "nanoid": "^2.1.11"
   }
 }

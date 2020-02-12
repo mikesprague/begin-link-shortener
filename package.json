@@ -7,7 +7,7 @@
     "build:dev": "cross-env NODE_ENV=testing npm run assets -d",
     "prepare": "npm run snyk-protect",
     "snyk-protect": "snyk protect",
-    "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'cross-env NODE_ENV=testing webpack -d --color --display-max-modules 0' --names '🖥 ,📦 ' --prefix '[{name}] '"
+    "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'cross-env NODE_ENV=testing webpack -d --watch --color --display-max-modules 0' --names '🖥 ,📦 ' --prefix '[{name}] '"
   },
   "dependencies": {
     "@bugsnag/js": "^6.5.2",
@@ -16,10 +16,8 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "clipboard-polyfill": "^2.8.6",
-    "dayjs": "^1.8.20",
     "dompurify": "^2.0.8",
     "dotenv": "^8.2.0",
-    "nanoid": "^2.1.11",
     "snyk": "^1.291.0"
   },
   "devDependencies": {
