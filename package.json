@@ -118,6 +118,7 @@
           "argsIgnorePattern": "res|next|^err"
         }
       ],
+      "import/no-extraneous-dependencies": "warn",
       "max-len": "off",
       "no-restricted-globals": "warn",
       "no-underscore-dangle": "off",
