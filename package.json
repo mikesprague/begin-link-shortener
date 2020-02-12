@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack -p --color --display-max-modules 0",
     "build:dev": "cross-env NODE_ENV=testing npm run assets -d",
-    "prepare": "yarn snyk-protect",
+    "prepare": "npm run snyk-protect",
     "snyk-protect": "snyk protect",
     "start": "concurrently 'cross-env NODE_ENV=testing npx sandbox' 'cross-env NODE_ENV=testing webpack -d --color --display-max-modules 0' --names '🖥 ,📦 ' --prefix '[{name}] '"
   },
@@ -61,7 +61,7 @@
     "style-loader": "^1.1.3",
     "terser-webpack-plugin": "^2.3.4",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.11",
     "webpackbar": "^4.0.0"
   },
   "browserslist": {
