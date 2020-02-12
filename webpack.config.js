@@ -61,7 +61,7 @@ const config = {
                   autoprefixer(),
                   cssnano({ preset: 'default' }),
                   purgecss({
-                    content: ['./src/**/*.html'],
+                    content: ['./src/shared/*.js'],
                     fontFace: true,
                     whitelistPatterns: [/result-section/, /result/, /result-link/, /clipboard-link/, /short-url/],
                     whitelistPatternsChildren: [/result-section/, /result/, /result-link/, /clipboard-link/, /short-url/],
