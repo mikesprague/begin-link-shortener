@@ -29,7 +29,7 @@ export function initCopyToClipboard() {
 }
 
 export function handleError(error) {
-  if (isProduction()) {
+  if (!isDev()) {
     // eslint-disable-next-line no-undef
     bugsnagClient.notify(error);
   }
