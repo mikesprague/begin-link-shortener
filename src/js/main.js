@@ -15,7 +15,7 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const input = document.querySelector('.url-input');
   const linkToShorten = DOMPurify.sanitize(input.value);
-  await axios.post('/new', {
+  await axios.post('/shorten', {
     link: linkToShorten,
   }).then((response) => {
     const resultTemplate = helpers.getResultMarkup(location.origin, response.data.short_id);
