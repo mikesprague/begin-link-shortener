@@ -90,11 +90,6 @@ const config = {
       to: './',
       force: true,
     }]),
-    new CopyWebpackPlugin([{
-      from: './src/favicon.ico',
-      to: './',
-      force: true,
-    }]),
     new CompressionPlugin({
       filename: '[path].gz[query]',
       algorithm: 'gzip',
