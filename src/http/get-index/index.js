@@ -1,6 +1,6 @@
-const begin = require('@architect/functions');
 const data = require('@begin/data');
 const templates = require('@architect/shared/templates');
+const helpers = require('@architect/shared/helpers');
 
 const html = templates.getIndexHtml();
 
@@ -11,28 +11,14 @@ exports.handler = async function http(req) {
     if (shortId && shortId.length === 8) {
       const shortLink = await data.get({
         table: 'links',
-        key: shortId,
+        key: shortId.replace('/', ''),
       });
       if (shortLink) {
-        console.log('shortLink: ', shortLink);
-        // return {
-        //   statusCode: 302,
-        //   headers: { location: shortLink.original_url },
-        // };
+        console.log(shortLink);
+        return helpers.returnShortLink(shortLink);
       }
-      return {
-        statusCode: 404,
-        headers: { 'content-type': 'text/html; charset=utf8' },
-        body: 'Short link not found',
-      };
+      return helpers.returnNotFound();
     }
   }
-
-  return {
-    headers: {
-      'content-type': 'text/html; charset=utf8',
-      // 'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0',
-    },
-    body: html,
-  };
+  return helpers.returnPage(html);
 };

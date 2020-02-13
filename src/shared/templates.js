@@ -1,18 +1,17 @@
 function staticAsset(filename) {
-  let origin
-  let env = process.env.NODE_ENV
+  let origin;
+  const env = process.env.NODE_ENV;
   if (env === 'production') {
-    origin = process.env.BEGIN_STATIC_EDGE // CDN
+    origin = process.env.BEGIN_STATIC_EDGE; // CDN
   } else if (env === 'staging') {
-    origin = process.env.BEGIN_STATIC_ORIGIN // Preview
+    origin = process.env.BEGIN_STATIC_ORIGIN; // Preview
   } else {
-    origin = '/_static' // Handles local use cases
+    origin = '/_static'; // Handles local use cases
   }
-  return `${origin}/${filename}`
+  return `${origin}/${filename}`;
 }
 
-exports.getIndexHtml = () => {
-  const siteName = 'm12e.link';
+exports.getIndexHtml = (siteName = 'm12e.link') => {
   const pageTitle = `${siteName} | URL Shortener`;
   const indexTemplate = `
 <!DOCTYPE html>
@@ -62,4 +61,4 @@ exports.getIndexHtml = () => {
 `;
 
   return indexTemplate;
-}
+};

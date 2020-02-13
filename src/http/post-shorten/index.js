@@ -10,19 +10,17 @@ exports.handler = async function http(req) {
   const body = parseBody(req);
   const { link } = body;
   const key = nanoid(7);
-  const linkData = {
+  const meta = {
+    short_id: key,
     url: link,
     created: dayjs().toISOString(),
-    visits: 0,
   };
-  console.log(linkData);
-  const newLink = await data.set({ table, key, linkData });
-  consolee.log(newLink);
-  // return {
-  //   status: 302,
-  //   headers: {
-  //     'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
-  //   },
-  //   location: '/'
-  // }
+  await data.set({ table, key, meta });
+  return {
+    headers: { 'content-type': 'application/json; charset=utf8' },
+    body: JSON.stringify({
+      original_url: link,
+      short_id: key,
+    }),
+  };
 };
