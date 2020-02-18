@@ -18,7 +18,7 @@
     "clipboard-polyfill": "^2.8.6",
     "dompurify": "^2.0.8",
     "dotenv": "^8.2.0",
-    "snyk": "^1.291.0"
+    "snyk": "^1.294.0"
   },
   "devDependencies": {
     "@architect/sandbox": "latest",
